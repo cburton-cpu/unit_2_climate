@@ -93,5 +93,12 @@ ylab="Ice Mass Loss (Gt)")
 min(ant_ice_loss$mass_in_Gt)
 min(grn_ice_loss$mass_in_Gt)
 
+#open up a plotting device
+pdf("figures/ice_mass_trends.pdf", width = 7, height = 5)
+
+#create the figure
 barplot(height = c(min(ant_ice_loss$mass_in_Gt), min(grn_ice_loss$mass_in_Gt)) *(-1),
   names.arg = c("Antartica", "Greenland"))
+
+#close the plotting device
+dev.off()
